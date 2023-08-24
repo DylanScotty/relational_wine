@@ -1,0 +1,7 @@
+<h2>Wines at Winery: <%= @winery.name %></h2>
+
+<% @winery_wines.each do |wine| %>
+<h3><%= wine.name %></h3><br/>
+<p>ABV: <%= wine.abv %></p><br/>
+<p>Still Available? <%= wine.still_available %></p><br/>
+<% end %>
