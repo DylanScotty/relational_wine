@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/wineries", to: "wineries#index"
   get "/wineries/:id", to: "wineries#show"
   get "/wines", to: "wines#index"
+  get "/wines/:id", to: "wines#show"
+  get "/wineries/:id/wines", to: "winery_wines#index"
 end
