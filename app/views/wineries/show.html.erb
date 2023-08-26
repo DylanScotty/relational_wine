@@ -1,4 +1,6 @@
 <h2><%= @winery.name %></h2>
+<p><%= link_to "Wines from #{@winery.name}", "/wineries/#{@winery.id}/wines" %></p>
 <p>Location: <%= @winery.location %></p>
 <p>Employees: <%= @winery.employees %></p>
 <p>Still active: <%= @winery.still_active %></p>
+<p>Wines: <%= @winery.wines.count %></p>
