@@ -24,4 +24,19 @@ RSpec.describe 'the wineries show page' do
         expect(page).to have_content("Wines: 2")
     end
 
+    #User Story 18
+    it "has a link to delete the winery" do
+        winery = Winery.create(name: "Castello di Amorosa", location: "California", employees: 48, still_active: true)
+        wine_1 = winery.wines.create(name: "Voyager Vineyard", abv: 15, still_available: true)
+
+        visit "/wineries/#{winery.id}"
+
+        expect(page).to have_content("Delete #{winery.name}")
+
+        click_link("Delete #{winery.name}")
+
+        expect(current_path).to eq("/wineries")
+        expect(page).to_not have_content("Castello di Amorosa")
+    end
+
 end
