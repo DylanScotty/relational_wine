@@ -4,3 +4,5 @@
 <p>Employees: <%= @winery.employees %></p>
 <p>Still active: <%= @winery.still_active %></p>
 <p>Wines: <%= @winery.wines.count %></p>
+<%= link_to 'Update Winery', "/wineries/#{@winery.id}/edit" %>
+<p><%= link_to "Delete #{@winery.name}", "/wineries/#{@winery.id}", data: {turbo_method: :delete } %></p>
