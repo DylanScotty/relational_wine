@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Winery, type: :model do
+  
+  describe Winery do
+    it {should have_many :wines}
+  end
+
   describe ".order_by_creation" do
     it "returns records ordered by creation date in descending order" do
       winery_1 = Winery.create(name: "Castello di Amorosa", location: "California", employees: 48, still_active: true, created_at: 2.days.ago)
