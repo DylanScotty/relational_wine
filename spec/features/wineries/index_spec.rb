@@ -38,4 +38,17 @@ RSpec.describe 'the wineries index page' do
         expect(page).to have_link("Wineries", href: "/wineries")
     end
 
+    #User Story 17
+    it "displays a link to edit each of the wineries info" do
+        winery = Winery.create(name: "Castello di Amorosa", location: "California", employees: 48, still_active: true)
+
+        visit "/wineries"
+
+        expect(page).to have_link("Edit Info For #{winery.name}", href: "/wineries/#{winery.id}/edit")
+
+        click_link("Edit Info For #{winery.name}", href: "/wineries/#{winery.id}/edit")
+
+        expect(page).to have_current_path("/wineries/#{winery.id}/edit")
+    end
+
 end
