@@ -5,12 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/wineries", to: "wineries#index"
-  post "/wineries", to: "wineries#create"
   get "/wineries/new", to: "wineries#new"
+  post "/wineries", to: "wineries#create"
   get "/wineries/:id", to: "wineries#show"
   get "/wineries/:id/edit", to: "wineries#edit"
   patch "/wineries/:id", to: "wineries#update"
-  delete "/wineries/:id", to: "wineries#destroy"
   get "/wines", to: "wines#index"
   get "/wines/:id", to: "wines#show"
   get "/wineries/:winery_id/wines", to: "winery_wines#index"
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
   get "/wines/:id/edit", to: "wines#edit"
   patch "/wines/:id", to: "wines#update"
   get "/wineries/:id/wines", to: "winery_wines#index"
+  delete "/wineries/:id", to: "wineries#destroy"
   delete "/wines/:id", to: "wines#destroy"
 
 end
