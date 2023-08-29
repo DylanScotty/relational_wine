@@ -1,3 +1,5 @@
 <h2><%= @wine.name %></h2>
 <p>ABV: <%= @wine.abv %></p>
 <p>Still Available: <%= @wine.still_available %></p>
+<%= link_to "Update Wine", "/wines/#{@wine.id}/edit" %></p>
+<%= link_to "Delete #{@wine.name}", "/wines/#{@wine.id}", data: {turbo_method: :delete} %>
