@@ -1,0 +1,12 @@
+<h1><%= "Edit #{@wine.name}" %></h1>
+
+    <%= form_with url: "/wines/#{@wine.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name%> <br>
+    <%= form.label :abv %>
+    <%= form.text_field :abv %> <br>
+    <%= form.label :still_available %>
+    <%= form.radio_button :still_available, 'true' %> true
+    <%= form.radio_button :still_available, 'false' %> false <br>
+    <%= form.submit "Update Wine" %>
+ <% end %>
