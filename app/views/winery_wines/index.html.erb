@@ -1,7 +1,10 @@
 <h2>Wines at Winery: <%= @winery.name %></h2>
+<%= link_to "New #{@winery.name} Wine", "/wineries/#{@winery.id}/wines/new", method: :get %>
+<%= link_to "Alphabetize", "/wineries/#{@winery.id}/wines?sort=alpha" %><br>
 
-<% @winery_wines.each do |wine| %>
-<h3><%= wine.name %></h3><br/>
-<p>ABV: <%= wine.abv %></p><br/>
+<% @wines.each do |wine| %>
+<h3><%= wine.name %></h3>
+<%= link_to "Edit Info For #{wine.name}", "/wines/#{wine.id}/edit" %>
+<p>ABV: <%= wine.abv %></p>
 <p>Still Available? <%= wine.still_available %></p><br/>
 <% end %>
