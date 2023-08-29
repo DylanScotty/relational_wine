@@ -1,0 +1,13 @@
+<h1> Update Winery </h1>
+
+ <%= form_with url: "/wineries/#{@winery.id}", method: :patch, local: true do |form| %>
+   <%= form.label :name %>
+   <%= form.text_field :name %> <br>
+   <%= form.label :location %>
+   <%= form.text_field :location %> <br>
+   <%= form.label :employees %>
+   <%= form.text_field :employees %> <br>
+   <%= form.radio_button :still_active, 'true' %> true
+   <%= form.radio_button :still_active, 'false' %> false <br>
+   <%= form.submit "Update Winery" %>
+<% end %>
