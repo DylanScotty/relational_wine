@@ -1,6 +1,8 @@
 <h2>Wineries</h2>
+<%= link_to 'New Winery', '/wineries/new' %>
 
 <% @wineries.each do |winery| %>
-<p><%= winery.name %></p><br>
+<p><h3><%= winery.name %></h3></p>
+<%= link_to "Edit Info For #{winery.name}", "/wineries/#{winery.id}/edit" %>
 <p><%= winery.created_at %></p><br>
 <% end %>
