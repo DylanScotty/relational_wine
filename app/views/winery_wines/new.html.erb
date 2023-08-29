@@ -1,0 +1,11 @@
+<h1> Create New <%= "#{@winery.name} Wine" %></h1>
+
+    <%= form_with url: "/wineries/#{@winery.id}/wines", method: :post, local: true do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name %> <br>
+        <%= form.label :abv %>
+        <%= form.text_field :abv %> <br>
+        <%= form.radio_button :still_available, 'true' %> true
+        <%= form.radio_button :still_available, 'false' %> false <br>
+        <%= form.submit "Create Wine" %>
+<% end %>
